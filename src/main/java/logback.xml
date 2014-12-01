@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern> %d{HH:mm:ss.SSS} %logger{36} %-5level [%thread] %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<appender name="INFOLOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  	<file>D:\log\foruminfo.log</file>
+	<append>true</append>
+	<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+         <maxHistory>1</maxHistory>	
+	</rollingPolicy>
+		<encoder>
+			<pattern> %d{HH:mm:ss.SSS} %logger{36} %-5level [%thread] %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="ALLLOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>D:\log\forumdebug.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <maxHistory>1</maxHistory>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender> 
+  <logger name="debugLogger" level="DEBUG" additivity="false">
+   <appender-ref ref="ALLLOG" />
+  </logger>
+  
+  <logger name="infoLogger" level="INFO" additivity="false">
+   <appender-ref ref="INFOLOG" />
+  </logger>
+
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
