@@ -1,6 +1,7 @@
 package com.dyulok.dewa.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
 
 import java.util.List;
 
