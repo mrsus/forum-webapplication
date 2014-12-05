@@ -40,6 +40,10 @@ public class Post
 		return postCreator;
 	}
 
+	public void setPost_ID(int post_ID) {
+		this.post_ID = post_ID;
+	}
+
 	public void setPostCreator(String postCreator) {
 		this.postCreator = postCreator;
 	}

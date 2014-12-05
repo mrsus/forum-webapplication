@@ -57,10 +57,10 @@ public class CommentServiceTest {
 		comment.setCommentCreator("ABC");
 		comment.setPostId(15);
 		hibernateTemplate.save(comment);
-		int result=comment.getCommentId();
-		assertNotSame(0, result);
+		int commentId=comment.getCommentId();
+		assertNotSame(0, commentId);
 		
-		commentService.deleteComment(comment);
+		commentService.deleteComment(commentId);
 		int deletedId=comment.getCommentId();
 		
 		Comment loadedComment=hibernateTemplate.get(Comment.class, deletedId);

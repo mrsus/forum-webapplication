@@ -50,6 +50,11 @@ public class User
 		return userID;
 	}
 
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
+
 	public String getFirstName() {
 		return firstName;
 	}

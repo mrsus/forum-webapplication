@@ -17,7 +17,9 @@ public class CommentDaoImpl extends HibernateDaoSupport implements CommentDao {
 	}
 
 	@Override
-	public void deleteComment(Comment comment) {
+	public void deleteComment(int commentId) {
+		Comment comment=new Comment();
+		comment.setCommentId(commentId);
 		getHibernateTemplate().delete(comment);
 	}
 	@Override

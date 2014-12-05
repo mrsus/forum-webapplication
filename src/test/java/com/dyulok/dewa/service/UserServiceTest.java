@@ -19,6 +19,7 @@ import com.dyulok.dewa.service.user.UserServiceImpl;
 @ContextConfiguration(locations = {"/com/dyulok/dewa/test-bean.xml"})
 public class UserServiceTest {
 
+	
 	@Autowired
 	private UserServiceImpl userService;
 	
@@ -54,17 +55,19 @@ public class UserServiceTest {
 	
 	@Test
 	public void testDeleteUser(){
+		
 		User user=new User();
+		
 		user.setEmailId("xyz@as.as");
 		user.setFirstName("firstName1");
 		user.setLastName("lastName1");
 		user.setPassword("password1");
 		
 		hibernateTemplate.save(user);
-		int result=user.getUserID();
-		assertNotSame(0,result);
+		int userId=user.getUserID();
+		assertNotSame(0,userId);
 		
-		userService.deleteUser(user);
+		userService.deleteUser(userId);
 		int resultId=user.getUserID();
 		
 		User loadedUser=hibernateTemplate.get(User.class, resultId);

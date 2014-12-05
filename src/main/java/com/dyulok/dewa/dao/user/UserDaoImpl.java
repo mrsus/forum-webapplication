@@ -18,7 +18,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 	}
 
 	@Override
-	public void deleteUser(User user) {
+	public void deleteUser(int userId) {
+		User user=new User();
+		user.setUserID(userId);
 		getHibernateTemplate().delete(user);
 	}
 

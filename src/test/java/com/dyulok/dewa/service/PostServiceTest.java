@@ -60,10 +60,10 @@ public class PostServiceTest {
 		post.setUserID(10);
 		
 		hibernateTemplate.save(post);
-		int result=post.getPost_ID();
-		assertNotSame(0,result);
+		int postId=post.getPost_ID();
+		assertNotSame(0,postId);
 		
-		postService.deletePost(post);
+		postService.deletePost(postId);
 		int resultId=post.getPost_ID();
 				
 		Post loadedPost=hibernateTemplate.get(Post.class, resultId);

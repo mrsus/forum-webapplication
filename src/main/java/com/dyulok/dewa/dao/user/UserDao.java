@@ -6,7 +6,7 @@ import com.dyulok.dewa.model.User;
 public interface UserDao 
 {
 	public int addUser ( User user ); 
-	public void deleteUser(User user);
+	public void deleteUser(int userId);
 	public int updateUser(User user);
 	public User getUser(int id);  
 	public User loginUser(String emailId,String password) throws LoginFailureException;

@@ -19,7 +19,9 @@ public class PostDaoImpl extends HibernateDaoSupport implements PostDao {
 	}
 
 	@Override
-	public void deletePost(Post post) {
+	public void deletePost(int postId) {
+		Post post=new Post();
+		post.setPost_ID(postId);
 		getHibernateTemplate().delete(post);
 
 	}

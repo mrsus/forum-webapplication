@@ -11,5 +11,5 @@ public interface PostDao
 	public List<Post> loadAllPost();
 	public List<Post> loadAllPostForUser(int userId);
 	public int updatePost(Post post);
-	public void deletePost(Post post);
+	public void deletePost(int postId);
 }

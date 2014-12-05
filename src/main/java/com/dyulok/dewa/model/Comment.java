@@ -23,6 +23,10 @@ public class Comment
 	@Column(name="COMMENT_ID")
 	private int commentId;
 	
+	public void setCommentId(int commentId) {
+		this.commentId = commentId;
+	}
+
 	@Column(name="POST_ID")
 	private int postId;
 	
